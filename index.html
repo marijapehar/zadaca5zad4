@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8">
+  <title>Rad sa nizovima u JavaScriptu</title>
+</head>
+<body>
+  <h2>Rad sa nizovima</h2>
+  <script>
+    let polje = new Array(1, 2, 3, 4, 7, 8, 5, 6, 9, 55, 12, 4, 85);
+
+    document.write("<b>a) Dužina polja:</b> " + polje.length + "<br>");
+    console.log("a) Dužina polja:", polje.length);
+
+    let opadajuce = [...polje].sort((a, b) => b - a);
+    document.write("<b>b) Sortirano od najvećeg ka najmanjem:</b> " + opadajuce.join(", ") + "<br>");
+    console.log("b) Opadajuće:", opadajuce);
+
+    let rastuce = [...polje].sort((a, b) => a - b);
+    document.write("<b>c) Sortirano od najmanjeg ka najvećem:</b> " + rastuce.join(", ") + "<br>");
+    console.log("c) Rastuće:", rastuce);
+
+    rastuce.pop();
+    document.write("<b>d) Nakon uklanjanja zadnjeg člana:</b> " + rastuce.join(", ") + "<br>");
+    console.log("d) Bez zadnjeg:", rastuce);
+
+    rastuce.push(19, 22);
+    document.write("<b>e) Nakon dodavanja 19 i 22:</b> " + rastuce.join(", ") + "<br>");
+    console.log("e) Dodano 19 i 22:", rastuce);
+
+    let polje2 = ["Banana", "Orange", "Apple", "Mango"];
+    let polje_final = rastuce.concat(polje2);
+    document.write("<b>f) Spojeno polje (polje_final):</b> " + polje_final.join(", ") + "<br>");
+    console.log("f) Spojeno polje:", polje_final);
+  </script>
+</body>
+</html>
